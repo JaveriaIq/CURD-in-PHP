@@ -1,0 +1,205 @@
+<?php
+$conn=mysqli_connect("localhost","root","","new_bt");
+if(isset($_POST['btnSubmit']))
+{
+	$txtName=$_POST['txtName'];
+	$txtPass=$_POST['txtPass'];
+
+	$query="SELECT * from tbl_bt WHERE name='{$txtName}' AND password='{$txtPass}'";
+	$result= mysqli_query($conn,$query);
+
+	if($res=mysqli_fetch_array($result))
+	{
+		echo "<script> alert(\"login successfully\");</script>";
+	}
+	
+	else 
+		{
+			echo "<script>alert(\"login failed\");</script>";
+		}
+
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/9d43227817.js" crossorigin="anonymous"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+<link rel="=stylesheet" href="css/style.css">
+
+
+<title>Document</title>
+</head>
+<body>
+<!-- NAv bar -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-danger fixed-top">
+  <a href="index11.html" class ="navbar-brand">FIRST BOOTSTRAP PAGE</a>
+  <span class="navbar-text text-light pl-5">Learn and Implement</span>
+  <button type="button" class="navbar-toggler"
+  	data-toggle="collapse" data-target="#myMenu">
+  	<span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="myMenu">
+  	<ul class="navbar-nav pl-5 custom-nav">
+  		<li class="nav-item"><a href="#" class="nav-link text-light ml-4"> Home </a></li>
+  		<li class="nav-item"><a href="#" class="nav-link text-light"> Services </a></li>
+  		<li class="nav-item"><a href="#" class="nav-link text-light"> Gallery</a></li>
+  		<li class="nav-item"><a href="#" class="nav-link text-light"> About</a></li>
+  		<li class="nav-item"><a href="#" class="nav-link text-light"> Sign In</a></li>
+  	</ul>
+  </div>
+</nav>
+
+ 
+
+<header class="jumbotron back-image" style="background-image: url('img3.jpg');">
+<div class="text-center" style="margin-top: 120px;">
+	<h1 class= "text-uppercase text-danger font-weight bold"> welcome to ABC Institute</h1>
+	<a href="#" class="btn btn-outline-danger mr-4">Contact US</a>
+	<a href="#" class="btn btn-outline-danger">Join US</a>
+</div>
+</header>
+
+<div class="container text-center border-bottom">
+	<h2>SERVICES</h2>
+	<div class="row mt-4">
+		<div class="col-sm-4 mb-4">
+			<a href="#"><i class="fab fa-android fa-10x text-danger"></i></a>
+			<h5 class ="mt-4"> Android Application</h5>
+		</div>
+	
+
+	
+		<div class="col-sm-4 mb-4">
+			<a href="#"><i class="fab fa-android fa-10x text-danger"></i></a>
+			<h5 class ="mt-4"> WEB Application</h5>
+		</div>
+	
+		<div class="col-sm-4 mb-4">
+			<a href="#"><i class="fab fa-android fa-10x text-danger"></i></a>
+			<h5 class ="mt-4">ERP Consultants</h5>
+		</div>
+	</div>
+</div>
+
+<div class="container pt-5 border-bottom">
+	<h3> GALLERY</h3>
+<div class="row">
+<div class="col-lg-3">
+	<img src="img2.jpg" alt="" class="img-fluid">
+</div>
+
+<div class="col-lg-3">
+	<img src="img3.jpg" alt="" class="img-fluid">
+</div>
+<div class="col-lg-3">
+	<img src="img3.jpg" alt="" class="img-fluid">
+</div>
+<div class="col-lg-3">
+	<img src="img2.jpg" alt="" class="img-fluid">
+</div>
+
+</div>
+</div>
+
+<!-- about -->
+<div class="container pt-5">
+	<h3> ABOUT </h3>
+<div class="row">
+<div class="col-lg-6">
+	<p>skjdKJDksdjsNMAXNMXCJSDJUQWIJAKMZxnZMCNSC CHXJCXNMN ZXJAN JX ZJADJASKXCNMNDJASHCMXDHD DX SIDHIDJkdhnjkuirhdajdknmn mx a hd ashjnjcnxxcuhjNJNFCMSVCNGKJFKSDLNCMN MNJDQDJHDXNAJKXNMCC ZCHJKNXJCMNCXFHCXKNMJKzjnxckJKVJNCNHV MN HCSD JJC SCSHFHCJSD NFDJHCNNH hDUDSUAN DHASD XDJASIDJ J ADJDKAJ ASJDSD SDDHIHDWIUEIWRUWIR ORUIEU	E FF KDJW DWUDIJKJkjjkljiijknkjnkjnjkniuhjjknjnn j lj ljkljkjlkljl k  l jjjjjjjjl jjhhhohuoh KRWJFK,SDFHKSFDNSDCMMCSMDMCSJFKJF IDWJDJMSKFJCMXKDJ L DSDJIJDDSK CX JDJ</p>
+</div>
+<div class ="col-lg-6">
+	<img src="img3.jpg" alt="" class="img-fluid">
+</div>
+</div>
+</div>
+<!-- Sign in -->
+
+<form action="index11.php border-top">
+	<div class="panel panel-success">
+				
+				
+	<div class ="col-lg-4 text-center">
+	<h2> LOG IN</h2>
+	<div class="panel-body">
+	<div class="panel panel-success">
+				<div class="panel-heading">
+  <div class="form-group">
+    <label class="mb-2 mr-sm-2">UserName:</label>
+    <input type="name" class="form-control" id="txtName">
+  </div>
+  <div class="form-group">
+    <label for="pwd" class="mb-2 mr-sm-2">Password:</label>
+    <input type="password" class="form-control" id="txtpass">
+  </div>
+  </div>
+</div>
+</div>
+  <button type="submit" class="btn btn-danger mb-4">Login</button>
+</form>
+</div>
+
+
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+  Register now
+</button>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Create an account</h4>
+        <button type="button" class="close" data-dismiss="register">&times;</button>
+        <button type="submit" class="btn btn-danger mb-4">Save</button>
+
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+
+      	<div class="form-group">
+    <label for="name" class="mb-2 mr-sm-2">First Name:</label>
+    <input type="name" class="form-control" id="txtname">
+  </div>
+  <div class="form-group">
+    <label for="email" class="mb-2 mr-sm-2">Email:</label>
+    <input type="email" class="form-control" id="txtemail">
+  </div>
+  <div class="form-group">
+    <label for="contact" class="mb-2 mr-sm-2">Contact #:</label>
+    <input type="contact" class="form-control" id="txtcontact">
+  </div>
+        <div class="form-group">
+    <label for="password" class="mb-2 mr-sm-2">Password:</label>
+    <input type="password" class="form-control" id="txtpassword">
+  </div>
+  
+  
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymos"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
